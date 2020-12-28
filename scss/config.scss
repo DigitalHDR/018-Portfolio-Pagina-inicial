@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+@mixin font_family() {
+    font-family: Tahoma, sans-serif;
+}
+
+@mixin flex_center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    .home_container {
+        height: 100vh;
+        @include flex_center();
+        color: $color_text;
+        
+
+        .centro {
+            @include flex_center();
+            flex-direction: column;
+
+            .img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            .meu_nome {
+                margin-top: 1rem;
+                font-size: 1em;
+                letter-spacing: 5px;
+                @include font_family();
+            }
+
+            .especificacao {
+                margin-top: 1rem;
+                @include font_family();
+            }
+
+            .profissao {
+                @include font_family();
+                font-weight: 300;
+                font-size: 0.75em;
+                letter-spacing: 0.5em;
+                animation: headShake;
+                animation-duration: 3s;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2rem;
+                padding: 0 40px;
+                // background: royalblue;
+
+                .btn {
+                    margin-top: 0.5rem;
+                    font-size: 1em;
+                }
+
+                .inativo {
+                    border: 1px solid black;
+                }
+            }
+
+            .icones {
+                position: relative;
+                margin-top: 20px;
+
+                a {
+                    @include flex_center();
+                    margin: 0 30px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+                                1px 5px 10px rgba(0, 0, 0, 0.1);
+                    background: rgb(255, 255, 255);
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-10px);
+                        box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+                                    1px 24px 10px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
